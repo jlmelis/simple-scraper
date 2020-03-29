@@ -327,7 +327,7 @@ var app = (function () {
 
     // (33:2) {:else}
     function create_else_block(ctx) {
-    	let t_value = (/*title*/ ctx[1] ? /*title*/ ctx[1] : "") + "";
+    	let t_value = (/*title*/ ctx[1] || "") + "";
     	let t;
 
     	const block = {
@@ -338,7 +338,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*title*/ 2 && t_value !== (t_value = (/*title*/ ctx[1] ? /*title*/ ctx[1] : "") + "")) set_data_dev(t, t_value);
+    			if (dirty & /*title*/ 2 && t_value !== (t_value = (/*title*/ ctx[1] || "") + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -364,7 +364,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Loading.......";
-    			add_location(span, file, 31, 4, 654);
+    			add_location(span, file, 31, 4, 649);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -396,7 +396,7 @@ var app = (function () {
     	let div0;
     	let h30;
     	let t6;
-    	let t7_value = (/*url*/ ctx[0] ? /*url*/ ctx[0] : "") + "";
+    	let t7_value = (/*url*/ ctx[0] || "") + "";
     	let t7;
     	let t8;
     	let div1;
@@ -440,8 +440,8 @@ var app = (function () {
     			add_location(a, file, 23, 5, 485);
     			add_location(h30, file, 25, 2, 568);
     			add_location(div0, file, 24, 0, 560);
-    			add_location(h31, file, 29, 2, 617);
-    			add_location(div1, file, 28, 0, 609);
+    			add_location(h31, file, 29, 2, 612);
+    			add_location(div1, file, 28, 0, 604);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -475,7 +475,7 @@ var app = (function () {
     				set_input_value(input, /*url*/ ctx[0]);
     			}
 
-    			if (dirty & /*url*/ 1 && t7_value !== (t7_value = (/*url*/ ctx[0] ? /*url*/ ctx[0] : "") + "")) set_data_dev(t7, t7_value);
+    			if (dirty & /*url*/ 1 && t7_value !== (t7_value = (/*url*/ ctx[0] || "") + "")) set_data_dev(t7, t7_value);
 
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
     				if_block.p(ctx, dirty);

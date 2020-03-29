@@ -24,14 +24,14 @@
 View <a href="https://github.com/jlmelis/simple-scraper">Github</a> repository.
 <div>
   <h3>URL: </h3>
-  {url ? url : ''}
+  {url || ''}
 </div>
 <div>
   <h3>Title: </h3>
   {#if loading}
     <span>Loading.......</span>
   {:else}
-    {title ? title : ''}
+    {title || ''}
   {/if}
 </div>
 
