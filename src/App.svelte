@@ -15,7 +15,6 @@
     loading = true;
     getURLTitle();
   }
-
 </script>
 
 
