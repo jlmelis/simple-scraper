@@ -1,6 +1,6 @@
 ## simple-scraper
 
-This is a Simple web scrapping app testing some ideas for use in another project. This app consits of a Svelte frontend hitting a lambda function hosted on Netlify to retrieve a page title from a provided URL.
+This is a simple web scrapping app testing some ideas for use in another project. This app consits of a Svelte frontend hitting a lambda function hosted on Netlify to retrieve a page title from a provided URL.
 
 ### Running local
 
