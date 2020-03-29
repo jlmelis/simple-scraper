@@ -14,7 +14,7 @@ export async function handler(event, context) {
   .then(data => ({
     statusCode: 200,
     headers: {'Content-Type': 'text/html;charset=utf-8'},
-    body: data
+    body: JSON.stringify(data)
   }))
   .catch(error => ({ statusCode: 422, body: String(error) }));
 }
