@@ -1,8 +1,10 @@
 import cheerio from 'cheerio';
 import axios from 'axios';
 
+const withHttps = url => !/^https?:\/\//i.test(url) ? `https://${url}` : url;
+
 export async function handler(event, context) {
-  const url = decodeURIComponent(event.queryStringParameters.url);
+  const url = withHttps(decodeURI(event.queryStringParameters.url));
 
   return axios.get(url).then((response) => {
     const $ = cheerio.load(response.data);
