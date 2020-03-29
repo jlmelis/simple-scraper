@@ -1,0 +1,17 @@
+{
+  "name": "simple-scraper",
+  "version": "1.0.0",
+  "description": "Simple web scrapping practice for use in another project. Also using Netlify functions to host.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "netlify-lambda serve functions",
+    "build": "neltify-lambda build functions"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "netlify-lambda": "^1.6.3"
+  }
+}
