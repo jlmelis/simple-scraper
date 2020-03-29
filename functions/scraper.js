@@ -9,7 +9,7 @@ export async function handler(event, context) {
   return axios.get(url).then((response) => {
     const $ = cheerio.load(response.data);
 
-    return $("title").text(); 
+    return $("head > title").text(); 
   })
   .then(data => ({
     statusCode: 200,
