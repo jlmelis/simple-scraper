@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "netlify-lambda serve functions",
-    "build": "neltify-lambda build functions"
+    "build": "netlify-lambda build functions"
   },
   "devDependencies": {
     "netlify-lambda": "^1.6.3"
