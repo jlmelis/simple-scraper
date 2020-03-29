@@ -325,7 +325,7 @@ var app = (function () {
 
     const file = "src/App.svelte";
 
-    // (32:2) {:else}
+    // (33:2) {:else}
     function create_else_block(ctx) {
     	let t_value = (/*title*/ ctx[1] ? /*title*/ ctx[1] : "") + "";
     	let t;
@@ -349,14 +349,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(32:2) {:else}",
+    		source: "(33:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:2) {#if loading}
+    // (31:2) {#if loading}
     function create_if_block(ctx) {
     	let span;
 
@@ -364,7 +364,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Loading.......";
-    			add_location(span, file, 30, 4, 619);
+    			add_location(span, file, 31, 4, 654);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -379,7 +379,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(30:2) {#if loading}",
+    		source: "(31:2) {#if loading}",
     		ctx
     	});
 
@@ -434,14 +434,14 @@ var app = (function () {
     			t10 = space();
     			if_block.c();
     			attr_dev(input, "placeholder", "enter url");
-    			add_location(input, file, 20, 0, 346);
-    			add_location(button, file, 21, 0, 395);
+    			add_location(input, file, 21, 0, 381);
+    			add_location(button, file, 22, 0, 430);
     			attr_dev(a, "href", "https://github.com/jlmelis/simple-scraper");
-    			add_location(a, file, 22, 5, 450);
-    			add_location(h30, file, 24, 2, 533);
-    			add_location(div0, file, 23, 0, 525);
-    			add_location(h31, file, 28, 2, 582);
-    			add_location(div1, file, 27, 0, 574);
+    			add_location(a, file, 23, 5, 485);
+    			add_location(h30, file, 25, 2, 568);
+    			add_location(div0, file, 24, 0, 560);
+    			add_location(h31, file, 29, 2, 617);
+    			add_location(div1, file, 28, 0, 609);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -525,7 +525,8 @@ var app = (function () {
     	async function getURLTitle() {
     		let encodedUrl = encodeURI(url);
     		let response = await fetch(`/.netlify/functions/scraper?url=${encodedUrl}`);
-    		$$invalidate(1, title = await response.json());
+    		let result = await response.json();
+    		$$invalidate(1, title = result.title);
     		$$invalidate(2, loading = false);
     	}
 
