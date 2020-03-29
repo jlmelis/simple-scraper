@@ -10,7 +10,7 @@ To run this example locally download/clone the repository and run:
 npm install
 ```
 
-To get the app working locally, in manner that matches how it behaves on Netlify, I am using a simple Express proxy that listens on port 3000. To launch the svelte app, the function, and the proxy at the same time simply run:
+To get the app working locally, in a manner that matches how it behaves on Netlify, I am using a simple Express proxy that listens on port 3000. To launch the svelte app, the function, and the proxy at the same time simply run:
 
 ```bash
 npm run dev
