@@ -4,9 +4,9 @@
   let loading;
   
   async function getURLTitle() {
-    let encodedUrl = encodeURI(url);
-    let response = await fetch(`/.netlify/functions/scraper?url=${encodedUrl}`);
-    let result = await response.json();
+    const encodedUrl = encodeURI(url);
+    const response = await fetch(`/.netlify/functions/scraper?url=${encodedUrl}`);
+    const result = await response.json();
     
     title = result.title;
     loading = false;

@@ -364,7 +364,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			span.textContent = "Loading.......";
-    			add_location(span, file, 31, 4, 649);
+    			add_location(span, file, 31, 4, 655);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -434,14 +434,14 @@ var app = (function () {
     			t10 = space();
     			if_block.c();
     			attr_dev(input, "placeholder", "enter url");
-    			add_location(input, file, 21, 0, 381);
-    			add_location(button, file, 22, 0, 430);
+    			add_location(input, file, 21, 0, 387);
+    			add_location(button, file, 22, 0, 436);
     			attr_dev(a, "href", "https://github.com/jlmelis/simple-scraper");
-    			add_location(a, file, 23, 5, 485);
-    			add_location(h30, file, 25, 2, 568);
-    			add_location(div0, file, 24, 0, 560);
-    			add_location(h31, file, 29, 2, 612);
-    			add_location(div1, file, 28, 0, 604);
+    			add_location(a, file, 23, 5, 491);
+    			add_location(h30, file, 25, 2, 574);
+    			add_location(div0, file, 24, 0, 566);
+    			add_location(h31, file, 29, 2, 618);
+    			add_location(div1, file, 28, 0, 610);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -523,9 +523,9 @@ var app = (function () {
     	let loading;
 
     	async function getURLTitle() {
-    		let encodedUrl = encodeURI(url);
-    		let response = await fetch(`/.netlify/functions/scraper?url=${encodedUrl}`);
-    		let result = await response.json();
+    		const encodedUrl = encodeURI(url);
+    		const response = await fetch(`/.netlify/functions/scraper?url=${encodedUrl}`);
+    		const result = await response.json();
     		$$invalidate(1, title = result.title);
     		$$invalidate(2, loading = false);
     	}
